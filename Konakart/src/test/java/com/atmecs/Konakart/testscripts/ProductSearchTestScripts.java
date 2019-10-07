@@ -23,7 +23,9 @@ public class ProductSearchTestScripts extends TestBase {
 		
 		search.selectAndSearch(negativeData1, negativetext);
 		Searchvalidate.negativesearchvalidate(expnegativetext);
+		
 	}
+	
 	
 
 }

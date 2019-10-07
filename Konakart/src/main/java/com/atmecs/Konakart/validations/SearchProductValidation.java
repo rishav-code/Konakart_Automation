@@ -24,7 +24,7 @@ public  class SearchProductValidation {
 		System.out.println(negactualSearchText);
 		Assert.assertEquals(negactualSearchText, negexpectedtext, "Search result negvlidation failed");
 		System.out.println("search result negvalidation passed");
-		
+				
 	}
 
 }

@@ -176,5 +176,20 @@ WebElement element = driver.findElement(By.xpath(xpath));
 JavascriptExecutor je = (JavascriptExecutor) driver;
 je.executeScript("arguments[0].scrollIntoView(true);", element);
 }
+public static void selectDropdownByIndex(final String xpath, final int index) {
+	FluentWait<WebDriver> fluentWait = new FluentWait<WebDriver>(driver)
+			.ignoring(ElementClickInterceptedException.class).pollingEvery(Duration.ofSeconds(2))
+			.withTimeout(Duration.ofSeconds(30));
+	fluentWait.until(new Function<WebDriver, Boolean>() {
+		public Boolean apply(WebDriver driver) {
+			WebElement element = driver.findElement(By.xpath(xpath));
+			Select trip = new Select(element);
+
+			trip.selectByIndex(index);
+			return true;
+		}
+
+	});
+}
 
 }
